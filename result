@@ -1,1 +1,23 @@
 
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
+following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.ec2_instance will be created
+  + resource "aws_instance" "ec2_instance" {
+      + ami                                         = "ami-05d34d340fb1d89e5"
+      + host_resource_group_arn                     = (known after apply)
+      + iam_instance_profile                        = (known after apply)
+      + id                                          = (known after apply)
+      + instance_initiated_shutdown_behavior        = (known after apply)
+      + instance_type                               = "t2.micro"
+      + instance_state                              = (known after apply)
+      + env                                         = (known after apply)
+      + gateway                                     = (known after apply)
+      + hostname                                    = (known after apply)
+      + id                                          = (known after apply)
+  }
+Plan: 1 to add, 0 to change, 0 to destroy.
