@@ -11,6 +11,5 @@
       + env                                       = (known after apply)
       + public_vpc_id                             = (known after apply)
       + id                                        = (known after apply)
-  }
-  
+ 
 Plan: 1 to add, 0 to change, 0 to destroy.
