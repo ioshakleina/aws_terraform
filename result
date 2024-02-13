@@ -1,7 +1,3 @@
-Terraform will perform the following actions:
-
-  # aws_instance.ec2_instance will be created
-  + resource "aws_instance" "ec2_instance" {
       + ec2_ami                                   = "ami-05d34d340fb1d89e5"
       + public_subnet_AZ                          = "eu-central-1a"
       + host_resource_group_arn                   = (known after apply)
