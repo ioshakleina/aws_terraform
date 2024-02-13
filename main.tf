@@ -1,6 +1,5 @@
-
 provider "aws" {
-  region = var.Region
+  region = var.region
 }
 
 resource "aws_vpc" "main" {
@@ -9,7 +8,7 @@ resource "aws_vpc" "main" {
 
   tags = {
     Name        = "MainVPC"
-    Environment = var.Environment
+    Environment = var.environment
   }
 }
 
@@ -21,7 +20,7 @@ resource "aws_subnet" "public" {
 
   tags = {
     Name        = "PublicSubnet"
-    Environment = var.Environment
+    Environment = var.environment
   }
 }
 
@@ -30,7 +29,7 @@ resource "aws_internet_gateway" "main" {
 
   tags = {
     Name        = "InternetGateway"
-    Environment = var.Environment
+    Environment = var.environment
   }
 }
 
@@ -44,7 +43,7 @@ resource "aws_route_table" "public" {
 
   tags = {
     Name        = "PublicRouteTable"
-    Environment = var.Environment
+    Environment = var.environment
   }
 }
 
@@ -95,20 +94,18 @@ resource "aws_security_group" "ec2_sg" {
 
   tags = {
     Name        = "EC2SecurityGroup"
-    Environment = var.Environment
+    Environment = var.environment
   }
 }
 
 resource "aws_instance" "ec2_instance" {
-  ami             = var.instance_AMI
-  instance_type   = var.instance_type
-  subnet_id       = aws_subnet.public.id
-  security_group  = [aws_security_group.ec2_sg.id]
-  key_name        = var.key_name
-  user_data       = var.user_data
+  ami           = var.instance_AMI
+  instance_type = var.instance_type
+  subnet_id     = aws_subnet.public.id
 
   tags = {
     Name        = "EC2Instance"
-    Environment = var.Environment
+    Environment = var.environment
   }
 }
+
